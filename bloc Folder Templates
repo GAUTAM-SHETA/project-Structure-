@@ -1,0 +1,324 @@
+ "folderTemplates.structures": [
+        {
+            "name": "Bloc Feature Template",
+            "customVariables": [],
+            "omitParentDirectory": true,
+            "structure": [
+                {
+                    "fileName": "<FTName | snakecase>/presentation/widget",
+                    "template": "EmptyDirectory"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/page/<FTName | snakecase>_screen.dart",
+                    "template": "StateLassWidget"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/bloc/bloc.dart",
+                    "template": "BlocExport"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/bloc/<FTName | snakecase>_bloc.dart",
+                    "template": "Bloc"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/bloc/<FTName | snakecase>_state.dart",
+                    "template": "BlocState"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/bloc/<FTName | snakecase>_event.dart",
+                    "template": "BlocEvent"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/domain/entity",
+                    "template": "EmptyDirectory"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/domain/repository/<FTName | snakecase>_repository.dart",
+                    "template": "Repository"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/domain/usecase/<FTName | snakecase>_usecase.dart",
+                    "template": "usecase"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/data/model",
+                    "template": "EmptyDirectory"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/data/repository/<FTName | snakecase>_repository_impl.dart",
+                    "template": "RepositoryImpl"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/data/datasource/<FTName | snakecase>_datasource.dart",
+                    "template": "Datasource"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/data/datasource/<FTName | snakecase>_datasource_impl.dart",
+                    "template": "DatasourceImpl"
+                },
+            ],
+        },
+        {
+            "name": "Bloc Feature Template With ApplicationState",
+            "customVariables": [],
+            "omitParentDirectory": true,
+            "structure": [
+                {
+                    "fileName": "<FTName | snakecase>/presentation/widget",
+                    "template": "EmptyDirectory"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/page/<FTName | snakecase>_screen.dart",
+                    "template": "StateLassWidget"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/bloc/bloc.dart",
+                    "template": "BlocExport"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/bloc/<FTName | snakecase>_bloc.dart",
+                    "template": "Bloc"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/bloc/<FTName | snakecase>_state.dart",
+                    "template": "BlocStateWithApplicationState"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/presentation/bloc/<FTName | snakecase>_event.dart",
+                    "template": "BlocEvent"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/domain/entity",
+                    "template": "EmptyDirectory"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/domain/repository/<FTName | snakecase>_repository.dart",
+                    "template": "Repository"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/domain/usecase/<FTName | snakecase>_usecase.dart",
+                    "template": "Usecase"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/data/model",
+                    "template": "EmptyDirectory"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/data/repository/<FTName | snakecase>_repository_impl.dart",
+                    "template": "RepositoryImpl"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/data/datasource/<FTName | snakecase>_datasource.dart",
+                    "template": "Datasource"
+                },
+                {
+                    "fileName": "<FTName | snakecase>/data/datasource/<FTName | snakecase>_datasource_impl.dart",
+                    "template": "DatasourceImpl"
+                },
+            ],
+        },
+    ],
+    "folderTemplates.fileTemplates": {
+        "StateLassWidget": [
+            "import 'package:flutter/material.dart';",
+            "",
+            "class <FTName | pascalcase>Screen extends StatelessWidget {",
+            "  const <FTName | pascalcase>Screen({super.key});",
+            "",
+            "  @override",
+            "  Widget build(BuildContext context) {",
+            "    return Container();",
+            "  }",
+            "}"
+        ],
+        "BlocExport": [
+            "export '<FTName | snakecase>_bloc.dart';",
+            "export '<FTName | snakecase>_event.dart';",
+            "export '<FTName | snakecase>_state.dart';",
+        ],
+        "Bloc": [
+            "// import 'package:flutter_bloc/flutter_bloc.dart';",
+            "// import '<FTName | snakecase>_event.dart';",
+            "// import '<FTName | snakecase>_state.dart';",
+            "",
+            "// class <FTName | pascalcase>Bloc extends Bloc<<FTName | pascalcase>BlocEvent, <FTName | pascalcase>BlocState> {",
+            "//   <FTName | pascalcase>Bloc() : super(const <FTName | pascalcase>BlocStateInit()) {",
+            "//     on((event, emit) {});",
+            "//   }",
+            "",
+            "//   static <FTName | pascalcase>Bloc get blocRead {",
+            "//     return NavigationService.context.read<<FTName | pascalcase>Bloc>();",
+            "//   }",
+            "",
+            "//   static <FTName | pascalcase>Bloc get blocWatch {",
+            "//      return NavigationService.context.watch<<FTName | pascalcase>Bloc>();",
+            "//   }",
+            "// }",
+        ],
+        "BlocState": [
+            "// import 'package:equatable/equatable.dart';",
+            "",
+            "// abstract class <FTName | pascalcase>BlocState extends Equatable {",
+            "//   const <FTName | pascalcase>BlocState();",
+            "",
+            "//   <FTName | pascalcase>BlocState copyWith();",
+            "",
+            "//   @override",
+            "//   List<Object?> get props => [];",
+            "// }",
+            "",
+            "// class <FTName | pascalcase>BlocStateInit extends <FTName | pascalcase>BlocState {",
+            "//   const <FTName | pascalcase>BlocStateInit(): super();",
+            "",
+            "//   @override",
+            "//   <FTName | pascalcase>BlocState copyWith(){",
+            "//     return const <FTName | pascalcase>BlocStateImpl();",
+            "//   }",
+            "",
+            "//   @override",
+            "//   List<Object?> get props => [];",
+            "// }",
+            "",
+            "// class <FTName | pascalcase>BlocStateImpl extends <FTName | pascalcase>BlocState {",
+            "//   const <FTName | pascalcase>BlocStateImpl();",
+            "",
+            "//   @override",
+            "//   <FTName | pascalcase>BlocState copyWith(){",
+            "//     return const <FTName | pascalcase>BlocStateImpl();",
+            "//   }",
+            "",
+            "//   @override",
+            "//   List<Object?> get props => [];",
+            "// }",
+        ],
+        "BlocStateWithApplicationState": [
+            "// import 'package:equatable/equatable.dart';",
+            "",
+            "// abstract class <FTName | pascalcase>BlocState extends Equatable {",
+            "//   final ApplicationState <FTName | camelcase>State;",
+            "",
+            "//   const <FTName | pascalcase>BlocState({",
+            "//     required this.<FTName | camelcase>State,",
+            "//   });",
+            "",
+            "//   <FTName | pascalcase>BlocState copyWith({",
+            "//     final ApplicationState? <FTName | camelcase>State,",
+            "//   });",
+            "",
+            "//   @override",
+            "//   List<Object?> get props => [<FTName | camelcase>State];",
+            "// }",
+            "",
+            "// class <FTName | pascalcase>BlocStateInit extends <FTName | pascalcase>BlocState {",
+            "//   const <FTName | pascalcase>BlocStateInit(): super(",
+            "//     <FTName | camelcase>State: ApplicationState.initial,",
+            "//   );",
+            "",
+            "//   @override",
+            "//   <FTName | pascalcase>BlocState copyWith({",
+            "//     final ApplicationState? <FTName | camelcase>State,",
+            "//   }){",
+            "//     return <FTName | pascalcase>BlocStateImpl(",
+            "//       <FTName | camelcase>State: <FTName | camelcase>State ?? this.<FTName | camelcase>State,",
+            "//     );",
+            "//   }",
+            "",
+            "//   @override",
+            "//   List<Object?> get props => [<FTName | camelcase>State];",
+            "// }",
+            "",
+            "// class <FTName | pascalcase>BlocStateImpl extends <FTName | pascalcase>BlocState {",
+            "//   const <FTName | pascalcase>BlocStateImpl({",
+            "//     required super.<FTName | camelcase>State,",
+            "//   });",
+            "",
+            "//   @override",
+            "//   <FTName | pascalcase>BlocState copyWith({",
+            "//     final ApplicationState? <FTName | camelcase>State,",
+            "//   }){",
+            "//     return <FTName | pascalcase>BlocStateImpl(",
+            "//       <FTName | camelcase>State: <FTName | camelcase>State ?? this.<FTName | camelcase>State,",
+            "//     );",
+            "//   }",
+            "",
+            "//   @override",
+            "//   List<Object?> get props => [<FTName | camelcase>State];",
+            "// }",
+        ],
+        "BlocEvent": [
+            "// import 'package:equatable/equatable.dart';",
+            "",
+            "// abstract class <FTName | pascalcase>BlocEvent extends Equatable {",
+            "//   const <FTName | pascalcase>BlocEvent();",
+            "",
+            "//   @override",
+            "//   List<Object?> get props => [];",
+            "// }",
+            "",
+            "// class TestBlocEvent extends <FTName | pascalcase>BlocEvent {",
+            "//   const TestBlocEvent();",
+            "",
+            "//   @override",
+            "//   List<Object?> get props => [];",
+            "// }",
+        ],
+        "Usecase": [
+            "// import 'package:either_dart/either.dart';",
+            "// import '../../../../core/errors/failure.dart';",
+            "// import '../../../../core/usecase/usecase.dart';",
+            "// import '../repository/<FTName | snakecase>_repository.dart';",
+            "",
+            "// class <FTName | pascalcase>Usecase implements UseCase<NoParams, NoParams> {",
+            "//   final <FTName | pascalcase>Repository repository;",
+            "",
+            "//   <FTName | pascalcase>Usecase({required this.repository});",
+            "",
+            "//   @override",
+            "//   Future<Either<Failure, NoParams>> call(params) async {",
+            "//     throw UnimplementedError();",
+            "//   }",
+            "// }",
+        ],
+        "Repository": [
+            "// abstract class <FTName | pascalcase>Repository {",
+            "//   Future<Either<Failure, NoParams>> function();",
+            "// }"
+        ],
+        "RepositoryImpl": [
+            "// import '../../domain/repository/<FTName | snakecase>_repository.dart';",
+            "// import '../datasource/<FTName | snakecase>_datasource.dart';",
+            "",
+            "// class <FTName | pascalcase>RepositoryImpl implements <FTName | pascalcase>Repository {",
+            "//   final <FTName | pascalcase>DataSource dataSource;",
+            "",
+            "//   <FTName | pascalcase>RepositoryImpl({",
+            "//     required this.dataSource,",
+            "//   });",
+            "",
+            "//   @override",
+            "//   Future<Either<Failure, NoParams>> function() async {",
+            "//     return await errorHandler<NoParams>(() async {",
+            "//       final result = await dataSource.function();",
+            "//       return result",
+            "//     });",
+            "//   }",
+            "// }",
+        ],
+        "Datasource": [
+            "// abstract class <FTName | pascalcase>DataSource {",
+            "//   Future<NoParams> function();",
+            "// }"
+        ],
+        "DatasourceImpl": [
+            "// import '<FTName | snakecase>_datasource.dart';",
+            "",
+            "// class <FTName | pascalcase>DataSourceImpl extends BaseApi implements <FTName | pascalcase>DataSource {",
+            "//   <FTName | pascalcase>DataSourceImpl(super.baseUrl);",
+            "",
+            "//   @override",
+            "//   Future<NoParams> function() {",
+            "//     return apiClient.function(postBody: data);",
+            "//   }",
+            "// }",
+        ],
+    },
